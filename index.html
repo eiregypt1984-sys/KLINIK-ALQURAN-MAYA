@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelas Al-Quran Maya — Klinik Islahul Quran, PTSB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SKRIN LOG MASUK
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="login-screen">
+    <div class="login-card">
+
+      <!-- Logo baris atas -->
+      <div class="login-logos">
+        <div class="login-logo-item">
+          <img src="" alt="Logo Klinik Islahul Quran" class="login-logo-img" id="logo-klinik" />
+          <div class="login-logo-placeholder" id="logo-klinik-placeholder">
+            <span>☪</span>
+          </div>
+        </div>
+        <div class="login-logo-divider"></div>
+        <div class="login-logo-item">
+          <img src="" alt="Logo Politeknik Tuanku Sultanah Bahiyah" class="login-logo-img" id="logo-ptsb" />
+          <div class="login-logo-placeholder" id="logo-ptsb-placeholder">
+            <span>🏛</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nama sistem -->
+      <div class="login-title-block">
+        <h1 class="login-title">Kelas Al-Quran Maya</h1>
+        <p class="login-subtitle">Klinik Islahul Quran &mdash; Politeknik Tuanku Sultanah Bahiyah</p>
+        <p class="arabic login-basmallah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      </div>
+
+      <!-- Pilih peranan -->
+      <div id="login-step-role">
+        <p class="login-label">Sila pilih peranan anda:</p>
+        <div class="role-cards">
+          <div class="role-card" id="role-pelajar" data-role="pelajar">
+            <div class="role-icon">🎓</div>
+            <div class="role-name">Pelajar</div>
+            <div class="role-desc">Akses modul, jadual &amp; latihan</div>
+          </div>
+          <div class="role-card" id="role-admin" data-role="admin">
+            <div class="role-icon">🔧</div>
+            <div class="role-name">Admin</div>
+            <div class="role-desc">Urus pendaftaran &amp; pelajar</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Borang nama -->
+      <div id="login-step-form" style="display:none">
+        <div class="login-role-badge" id="selected-role-badge"></div>
+        <div class="form-group">
+          <label for="login-name">Nama Pengguna (Demo)</label>
+          <input type="text" id="login-name" placeholder="Masukkan nama anda" autocomplete="off" />
+        </div>
+        <button class="btn-primary btn-full" id="btn-login">Log Masuk</button>
+        <button class="btn-ghost btn-full" id="btn-back-role">← Tukar Peranan</button>
+        <p class="login-note">⚠ Sistem ini adalah prototaip demo. Tiada pengesahan kata laluan sebenar diperlukan.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PORTAL PELAJAR
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="portal-pelajar" class="portal" style="display:none">
+
+    <!-- Sidebar Pelajar -->
+    <aside class="sidebar" id="sidebar-pelajar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-circle">☪</div>
+        <div>
+          <div class="logo-title">Klinik Islahul Quran</div>
+          <div class="logo-sub">PTSB</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-portal="pelajar" data-section="p-overview">
+          <span class="nav-icon">🏠</span> <span class="nav-label">Papan Pemuka</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="pelajar" data-section="p-profil">
+          <span class="nav-icon">👤</span> <span class="nav-label">Profil &amp; Daftar</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="pelajar" data-section="p-jadual">
+          <span class="nav-icon">📅</span> <span class="nav-label">Jadual Kelas</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="pelajar" data-section="p-modul">
+          <span class="nav-icon">📖</span> <span class="nav-label">Modul Pembelajaran</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="pelajar" data-section="p-latihan">
+          <span class="nav-icon">🎙</span> <span class="nav-label">Latihan AI</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="pelajar" data-section="p-kelas-guru">
+          <span class="nav-icon">👨‍🏫</span> <span class="nav-label">Kelas Bersama Guru</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="pelajar" data-section="p-ujian">
+          <span class="nav-icon">📝</span> <span class="nav-label">Ujian &amp; Penilaian</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="pelajar" data-section="p-sijil">
+          <span class="nav-icon">🏆</span> <span class="nav-label">E-Sijil</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user-info">
+          <div class="user-avatar" id="p-avatar">P</div>
+          <div>
+            <div class="user-name" id="p-user-name">Pelajar</div>
+            <div class="user-role">Pelajar</div>
+          </div>
+        </div>
+        <button class="btn-logout" id="btn-logout-pelajar">Log Keluar</button>
+      </div>
+    </aside>
+
+    <!-- Butang hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-pelajar" aria-label="Buka Menu">☰</button>
+    <div class="sidebar-overlay" id="overlay-pelajar"></div>
+
+    <!-- Kandungan utama pelajar -->
+    <main class="main" id="main-pelajar">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div>
+          <h1 class="page-title" id="p-page-title">Papan Pemuka</h1>
+          <p class="page-sub" id="p-page-sub">Selamat datang kembali 👋</p>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-portal-badge">Portal Pelajar</div>
+        </div>
+      </header>
+
+      <!-- SEKSYEN: OVERVIEW PELAJAR -->
+      <section id="p-overview" class="section active">
+
+        <!-- Banner selamat datang -->
+        <div class="welcome-banner">
+          <div class="welcome-banner-text">
+            <div class="arabic welcome-arabic">أَهْلًا وَسَهْلًا</div>
+            <h2 id="p-welcome-name">Selamat datang, Pelajar!</h2>
+            <p>Teruskan perjalanan pembelajaran al-Quran anda hari ini.</p>
+          </div>
+          <div class="welcome-banner-icon">📖</div>
+        </div>
+
+        <!-- Aliran pelajar (6 langkah) -->
+        <div class="card">
+          <div class="card-header"><h2>📍 Status Aliran Pembelajaran</h2></div>
+          <div class="flow-steps" id="p-flow-steps">
+            <div class="flow-step" data-step="0">
+              <div class="flow-dot"></div>
+              <div class="flow-label">Daftar</div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step" data-step="1">
+              <div class="flow-dot"></div>
+              <div class="flow-label">Lulus</div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step" data-step="2">
+              <div class="flow-dot"></div>
+              <div class="flow-label">Jadual</div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step" data-step="3">
+              <div class="flow-dot"></div>
+              <div class="flow-label">Modul</div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step" data-step="4">
+              <div class="flow-dot"></div>
+              <div class="flow-label">Ujian</div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step" data-step="5">
+              <div class="flow-dot"></div>
+              <div class="flow-label">Sijil</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Kad statistik pelajar -->
+        <div class="stats-grid">
+          <div class="stat-card emerald">
+            <div class="stat-icon">📖</div>
+            <div class="stat-info">
+              <div class="stat-val" id="p-stat-modul">0</div>
+              <div class="stat-label">Modul Selesai</div>
+            </div>
+          </div>
+          <div class="stat-card gold">
+            <div class="stat-icon">🎙</div>
+            <div class="stat-info">
+              <div class="stat-val" id="p-stat-latihan">0</div>
+              <div class="stat-label">Latihan AI</div>
+            </div>
+          </div>
+          <div class="stat-card teal">
+            <div class="stat-icon">📅</div>
+            <div class="stat-info">
+              <div class="stat-val" id="p-stat-hadir">0</div>
+              <div class="stat-label">Kelas Hadir</div>
+            </div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-info">
+              <div class="stat-val" id="p-stat-sijil">—</div>
+              <div class="stat-label">Status Sijil</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peringatan / butang teruskan -->
+        <div id="p-status-banner"></div>
+
+      </section>
+
+      <!-- SEKSYEN: PROFIL & DAFTAR -->
+      <section id="p-profil" class="section">
+        <!-- Bahagian A: Borang Pendaftaran (jika belum daftar) -->
+        <div id="profil-borang-wrap" class="card" style="display:none">
+          <div class="card-header"><h2>📋 Borang Pendaftaran Kelas Al-Quran Maya</h2></div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nama Penuh *</label>
+              <input type="text" id="reg-nama" placeholder="Nama penuh seperti dalam kad pengenalan" />
+            </div>
+            <div class="form-group">
+              <label>E-mel *</label>
+              <input type="email" id="reg-email" placeholder="email@contoh.com" />
+            </div>
+            <div class="form-group">
+              <label>No. Telefon *</label>
+              <input type="tel" id="reg-telefon" placeholder="01X-XXXXXXX" />
+            </div>
+            <div class="form-group">
+              <label>Kategori Umur *</label>
+              <select id="reg-umur">
+                <option value="">-- Pilih --</option>
+                <option>Kanak-kanak (7–12 tahun)</option>
+                <option>Remaja (13–17 tahun)</option>
+                <option>Dewasa (18+ tahun)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tahap Penguasaan Bacaan *</label>
+              <select id="reg-tahap">
+                <option value="">-- Pilih --</option>
+                <option>Langsung tidak tahu</option>
+                <option>Tahu sedikit</option>
+                <option>Boleh baca dengan bantuan</option>
+                <option>Boleh baca sendiri</option>
+                <option>Lancar</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Kaedah Pembelajaran Pilihan *</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="reg-kaedah" value="Dalam talian" /> Dalam talian</label>
+                <label class="radio-label"><input type="radio" name="reg-kaedah" value="Bersemuka" /> Bersemuka</label>
+                <label class="radio-label"><input type="radio" name="reg-kaedah" value="Kedua-dua" /> Kedua-dua</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pengalaman Belajar Al-Quran Sebelum Ini</label>
+            <textarea id="reg-pengalaman" rows="3" placeholder="Ceritakan pengalaman anda belajar al-Quran sebelum ini (jika ada)..."></textarea>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Hari Pilihan (boleh pilih lebih dari satu)</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="reg-hari" value="Isnin" /> Isnin</label>
+                <label class="checkbox-label"><input type="checkbox" name="reg-hari" value="Selasa" /> Selasa</label>
+                <label class="checkbox-label"><input type="checkbox" name="reg-hari" value="Rabu" /> Rabu</label>
+                <label class="checkbox-label"><input type="checkbox" name="reg-hari" value="Khamis" /> Khamis</label>
+                <label class="checkbox-label"><input type="checkbox" name="reg-hari" value="Jumaat" /> Jumaat</label>
+                <label class="checkbox-label"><input type="checkbox" name="reg-hari" value="Sabtu" /> Sabtu</label>
+                <label class="checkbox-label"><input type="checkbox" name="reg-hari" value="Ahad" /> Ahad</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Waktu Pilihan *</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="reg-waktu" value="Pagi (08:00–10:00)" /> Pagi (08:00–10:00)</label>
+                <label class="radio-label"><input type="radio" name="reg-waktu" value="Petang (14:00–16:00)" /> Petang (14:00–16:00)</label>
+                <label class="radio-label"><input type="radio" name="reg-waktu" value="Malam (20:00–22:00)" /> Malam (20:00–22:00)</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pilihan Suara AI</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="reg-suara" value="Lelaki" /> 🗣 Lelaki</label>
+              <label class="radio-label"><input type="radio" name="reg-suara" value="Perempuan" /> 🗣 Perempuan</label>
+            </div>
+          </div>
+          <div id="reg-msg" style="display:none" class="form-success-msg"></div>
+          <button class="btn-primary" onclick="hantarPermohonan()">📨 Hantar Permohonan</button>
+        </div>
+
+        <!-- Bahagian B: Profil Pelajar (jika sudah daftar) -->
+        <div id="profil-pelajar-wrap" style="display:none">
+          <div class="card">
+            <div class="card-header">
+              <h2>👤 Profil Saya</h2>
+              <span id="profil-status-badge"></span>
+            </div>
+            <div class="profil-kad">
+              <div class="profil-avatar-lg" id="profil-avatar-lg">N</div>
+              <div class="profil-info">
+                <div class="profil-nama" id="profil-nama-display">—</div>
+                <div class="profil-sub" id="profil-email-display">—</div>
+                <div class="profil-sub" id="profil-telefon-display">—</div>
+              </div>
+            </div>
+            <div class="profile-preview" id="p-profile-preview"></div>
+          </div>
+
+          <!-- Langkah Seterusnya -->
+          <div class="card" id="profil-langkah-card" style="margin-top:0">
+            <div class="card-header"><h2>📍 Langkah Seterusnya</h2></div>
+            <div id="profil-langkah-content"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: JADUAL KELAS -->
+      <section id="p-jadual" class="section">
+        <!-- Panel Tempahan Kelas -->
+        <div class="card">
+          <div class="card-header"><h2>📅 Tempah Slot Kelas</h2></div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Pilih Hari</label>
+              <div class="btn-group-hari" id="jadual-hari-btns">
+                <button class="btn-hari" onclick="pilihHari(this,'Isnin')">Isnin</button>
+                <button class="btn-hari" onclick="pilihHari(this,'Selasa')">Selasa</button>
+                <button class="btn-hari" onclick="pilihHari(this,'Rabu')">Rabu</button>
+                <button class="btn-hari" onclick="pilihHari(this,'Khamis')">Khamis</button>
+                <button class="btn-hari" onclick="pilihHari(this,'Jumaat')">Jumaat</button>
+                <button class="btn-hari" onclick="pilihHari(this,'Sabtu')">Sabtu</button>
+                <button class="btn-hari" onclick="pilihHari(this,'Ahad')">Ahad</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Pilih Slot Masa</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="jadual-slot" value="pagi" onchange="kemaskiniPensyarahBertugas()" /> 🌅 Pagi (08:00–10:00)</label>
+                <label class="radio-label"><input type="radio" name="jadual-slot" value="petang" onchange="kemaskiniPensyarahBertugas()" /> 🌤 Petang (14:00–16:00)</label>
+                <label class="radio-label"><input type="radio" name="jadual-slot" value="malam" onchange="kemaskiniPensyarahBertugas()" /> 🌙 Malam (20:00–22:00)</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Kaedah</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="jadual-kaedah" value="Dalam talian" /> 💻 Dalam talian</label>
+              <label class="radio-label"><input type="radio" name="jadual-kaedah" value="Bersemuka" /> 🏫 Bersemuka</label>
+            </div>
+          </div>
+          <!-- Paparan pensyarah bertugas -->
+          <div id="jadual-pensyarah-preview" class="pensyarah-preview-box" style="display:none">
+            <div class="pensyarah-preview-label">👨‍🏫 Pensyarah Bertugas:</div>
+            <div id="jadual-pensyarah-names" class="pensyarah-preview-names"></div>
+          </div>
+          <div id="jadual-tempah-msg" style="display:none;margin-top:8px" class="form-success-msg"></div>
+          <button class="btn-primary" onclick="tempahSlot()" style="margin-top:12px">📌 Tempah Slot Ini</button>
+        </div>
+
+        <!-- Jadual Tempahan Saya -->
+        <div class="card">
+          <div class="card-header"><h2>📋 Jadual Tempahan Saya</h2></div>
+          <div id="jadual-tempahan-list">
+            <p style="color:var(--muted);font-size:0.82rem;text-align:center;padding:16px 0">Tiada tempahan lagi. Pilih slot di atas untuk membuat tempahan.</p>
+          </div>
+        </div>
+
+        <!-- Jadual Pensyarah Bertugas (Rujukan) -->
+        <div class="card">
+          <div class="card-header"><h2>🗓 Jadual Pensyarah Bertugas (Rujukan)</h2></div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Hari</th>
+                  <th>Slot Pagi (08:00–10:00)</th>
+                  <th>Slot Petang (14:00–16:00)</th>
+                  <th>Slot Malam (20:00–22:00)</th>
+                </tr>
+              </thead>
+              <tbody id="p-jadual-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: MODUL PEMBELAJARAN -->
+      <section id="p-modul" class="section">
+        <!-- Bar kemajuan -->
+        <div class="card" style="padding:16px 22px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <span style="font-weight:700;font-size:0.9rem;color:var(--emerald-dark)">📊 Kemajuan Keseluruhan</span>
+            <span id="modul-kemajuan-pct" style="font-weight:700;color:var(--emerald)">0%</span>
+          </div>
+          <div class="progress-bar-bg" style="height:10px">
+            <div class="progress-bar-fill" id="modul-kemajuan-bar" style="width:0%"></div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-top:6px"><span id="modul-selesai-count">0</span> daripada 10 modul selesai</div>
+        </div>
+
+        <div class="two-col modul-layout" style="gap:20px;align-items:flex-start">
+          <!-- Kiri: Senarai Modul -->
+          <div class="card modul-senarai-panel" style="padding:14px">
+            <div class="card-header" style="margin-bottom:10px"><h2>📚 Senarai Modul</h2></div>
+            <div id="modul-senarai-list"></div>
+          </div>
+          <!-- Kanan: Kandungan Modul Aktif -->
+          <div class="card modul-kandungan-panel" id="modul-kandungan-panel">
+            <div id="modul-kandungan-content">
+              <div style="text-align:center;padding:40px 0;color:var(--muted)">
+                <div style="font-size:2rem;margin-bottom:8px">📖</div>
+                <p>Pilih modul di sebelah kiri untuk mula belajar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: LATIHAN AI -->
+      <section id="p-latihan" class="section">
+        <!-- Notice bar -->
+        <div class="ai-notice" style="font-size:0.82rem">⚠ <strong>SIMULASI</strong> — Ini bukan sistem AI sebenar. Keputusan adalah contoh sahaja. Sila semak bacaan anda bersama guru al-Quran yang berkelayakan.</div>
+
+        <!-- Panel pilihan -->
+        <div class="card">
+          <div class="card-header"><h2>⚙ Tetapan Latihan</h2></div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Pilih Modul</label>
+              <select id="latihan-modul-sel" onchange="kemaskiniPilihanLatihan()">
+                <option value="0">-- Pilih Modul --</option>
+                <option value="1">Modul 1 — Pengenalan Ilmu Tajwid</option>
+                <option value="2">Modul 2 — Makhraj Huruf</option>
+                <option value="3">Modul 3 — Alif Lam Ma'rifah</option>
+                <option value="4">Modul 4 — Hukum Nun Mati &amp; Tanwin</option>
+                <option value="5">Modul 5 — Hukum Mim Mati &amp; Syaddah</option>
+                <option value="6">Modul 6 — Jenis-jenis Idgham</option>
+                <option value="7">Modul 7 — Jenis-jenis Mad</option>
+                <option value="8">Modul 8 — Hukum Bacaan Ra &amp; Lam</option>
+                <option value="9">Modul 9 — Qalqalah &amp; Waqaf</option>
+                <option value="10">Modul 10 — Hamzah Wasal &amp; Bacaan Gharib</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Pilih Bahan Bacaan</label>
+              <select id="latihan-bahan-sel">
+                <option value="0">-- Pilih bahan --</option>
+                <option value="1">Surah Al-Fatihah Ayat 1: بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</option>
+                <option value="2">Surah Al-Ikhlas Ayat 1: قُلْ هُوَ اللَّهُ أَحَدٌ</option>
+                <option value="3">Contoh Izhar: مَنْ ءَامَنَ بِاللَّهِ</option>
+                <option value="4">Contoh Mad Wajib: وَجَآءَ رَبُّكَ</option>
+                <option value="5">Contoh Qalqalah: يَكْذِبُونَ</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pilihan Suara AI</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="latihan-suara" value="Lelaki" checked /> 🗣 Lelaki</label>
+              <label class="radio-label"><input type="radio" name="latihan-suara" value="Perempuan" /> 🗣 Perempuan</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel latihan utama -->
+        <div class="card">
+          <div class="card-header"><h2>🎙 Panel Latihan</h2></div>
+          <div class="latihan-arab-display" id="latihan-arab-text">
+            <span class="arabic" style="font-size:2.2rem;color:var(--emerald-dark)">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+          </div>
+          <div class="latihan-btns">
+            <button class="btn-secondary" onclick="latihan_dengar()" id="btn-latihan-dengar">▶ Dengar Contoh</button>
+            <button class="btn-secondary" onclick="latihan_jeda()" id="btn-latihan-jeda" style="display:none">⏸ Jeda</button>
+            <button class="btn-secondary" onclick="latihan_ulang()">🔄 Ulang</button>
+            <button class="btn-primary" onclick="latihan_rakam()" id="btn-rakam">🎙 Mula Rakaman</button>
+          </div>
+          <div id="latihan-timer-wrap" style="display:none">
+            <div class="latihan-timer-bar">
+              <div class="latihan-timer-fill" id="latihan-timer-fill"></div>
+            </div>
+            <div id="latihan-timer-label" style="text-align:center;font-size:0.8rem;color:var(--muted);margin-top:4px">Sila baca teks di atas...</div>
+          </div>
+          <!-- Keputusan -->
+          <div id="latihan-keputusan" style="display:none" class="latihan-keputusan-box">
+            <div class="latihan-skor-wrap">
+              <div class="latihan-skor-circle" id="latihan-skor-circle">--%</div>
+              <div>
+                <div style="font-weight:700;font-size:0.95rem" id="latihan-skor-label">—</div>
+                <div style="font-size:0.78rem;color:var(--muted)" id="latihan-ulasan">—</div>
+              </div>
+            </div>
+            <div id="latihan-saranan" style="font-size:0.78rem;color:var(--emerald-dark);margin-top:8px;padding:8px 12px;background:var(--emerald-light);border-radius:6px"></div>
+            <div style="font-size:0.7rem;color:var(--muted);margin-top:8px;font-style:italic">[SIMULASI] Keputusan ini adalah contoh. Penilaian sebenar perlu disahkan oleh guru.</div>
+          </div>
+        </div>
+
+        <!-- Rekod Latihan -->
+        <div class="card">
+          <div class="card-header"><h2>📊 Rekod Latihan Terkini</h2></div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr><th>#</th><th>Tarikh &amp; Masa</th><th>Bahan Bacaan</th><th>Skor</th><th>Status</th></tr>
+              </thead>
+              <tbody id="latihan-rekod-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: KELAS BERSAMA GURU -->
+      <section id="p-kelas-guru" class="section">
+        <!-- Banner musyafahah -->
+        <div class="musyafahah-notice" style="font-size:0.85rem">
+          📢 <strong>Pembelajaran al-Quran secara musyafahah bersama guru adalah WAJIB.</strong> AI hanya alat bantu latihan kendiri. Sila hadiri kelas bersama pensyarah yang berkelayakan.
+        </div>
+
+        <!-- Jadual kelas disahkan -->
+        <div class="card">
+          <div class="card-header"><h2>✅ Kelas Disahkan Saya</h2></div>
+          <div id="kelas-disahkan-list">
+            <p style="color:var(--muted);font-size:0.82rem;text-align:center;padding:16px 0">Tiada kelas yang disahkan lagi. Buat tempahan di seksyen Jadual Kelas terlebih dahulu.</p>
+          </div>
+        </div>
+
+        <!-- Senarai Pensyarah -->
+        <div class="card">
+          <div class="card-header"><h2>👨‍🏫 Senarai Pensyarah</h2></div>
+          <div class="pensyarah-grid" id="pensyarah-kad-grid"></div>
+        </div>
+
+        <!-- Hantar Soalan -->
+        <div class="card">
+          <div class="card-header"><h2>✉ Hantar Soalan kepada Guru</h2></div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Pilih Pensyarah</label>
+              <select id="soalan-pensyarah-sel">
+                <option value="">-- Pilih Pensyarah --</option>
+                <option>Ustazah Raihan binti Ahmad (ARAI)</option>
+                <option>Ustaz Izzat Amin bin Mohd Nasir (AIZT)</option>
+                <option>Ustazah Latifah binti Hussin (ALTH)</option>
+                <option>Ustazah Wan Nur Hasnah binti Wan Yunus (AHAS)</option>
+                <option>Ustazah Siti Aisyah binti Othman (ASAO)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Soalan Anda</label>
+            <textarea id="soalan-teks" rows="4" placeholder="Taip soalan anda di sini..."></textarea>
+          </div>
+          <div id="soalan-msg" style="display:none" class="form-success-msg"></div>
+          <button class="btn-primary" onclick="hantarSoalan()">📨 Hantar Soalan</button>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: UJIAN & PENILAIAN -->
+      <section id="p-ujian" class="section">
+        <!-- Semakan syarat -->
+        <div class="card">
+          <div class="card-header"><h2>📋 Semakan Syarat Akses Ujian</h2></div>
+          <div id="ujian-syarat-list"></div>
+        </div>
+
+        <!-- Ujian simulasi -->
+        <div class="card" id="ujian-soalan-card">
+          <div class="card-header"><h2>📝 Ujian Penilaian Kendiri (Simulasi AI)</h2></div>
+          <div class="ai-notice" style="margin-bottom:16px">⚠ <strong>[SIMULASI]</strong> — Penilaian ini bukan ujian sebenar. Keputusan ujian yang sah perlu disahkan oleh guru.</div>
+          <div id="ujian-soalan-wrap">
+            <div id="ujian-soalan-display"></div>
+            <div id="ujian-jawapan-btns" style="margin-top:12px;display:flex;flex-direction:column;gap:8px"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px">
+              <span id="ujian-progres" style="font-size:0.78rem;color:var(--muted)">Soalan 1 daripada 5</span>
+              <button class="btn-primary" id="btn-ujian-seterusnya" onclick="soalanSeterusnya()" style="display:none">Seterusnya →</button>
+            </div>
+          </div>
+          <div id="ujian-keputusan" style="display:none"></div>
+        </div>
+
+        <!-- Status penilaian guru -->
+        <div class="card">
+          <div class="card-header"><h2>🎓 Status Penilaian Guru</h2></div>
+          <div id="ujian-status-guru"></div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: E-SIJIL -->
+      <section id="p-sijil" class="section">
+        <!-- Senarai semak syarat -->
+        <div class="card">
+          <div class="card-header"><h2>✅ Senarai Semak Syarat Sijil</h2></div>
+          <div id="sijil-syarat-list"></div>
+          <p style="font-size:0.75rem;color:var(--muted);margin-top:12px;font-style:italic">⚠ Sijil hanya boleh dijana selepas semua syarat dipenuhi dan disahkan admin.</p>
+        </div>
+
+        <!-- Pratonton sijil -->
+        <div id="sijil-preview-wrap" style="display:none">
+          <div class="card">
+            <div class="card-header">
+              <h2>🏆 Pratonton Sijil</h2>
+              <button class="btn-secondary" onclick="window.print()">🖨 Cetak / Simpan PDF</button>
+            </div>
+            <div class="sijil-container" id="sijil-print-area">
+              <div class="sijil-header">
+                <div class="sijil-logo-row">
+                  <div class="sijil-logo-circle">☪</div>
+                  <div>
+                    <div class="sijil-institusi">Klinik Islahul Quran</div>
+                    <div class="sijil-institusi-sub">Politeknik Tuanku Sultanah Bahiyah (PTSB)</div>
+                  </div>
+                </div>
+                <div class="sijil-arabic arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+              </div>
+              <div class="sijil-tajuk">SIJIL PENYELESAIAN</div>
+              <div class="sijil-subtitle">Certificate of Completion</div>
+              <div class="sijil-teks">Ini mengesahkan bahawa</div>
+              <div class="sijil-nama" id="sijil-nama-pelajar">—</div>
+              <div class="sijil-teks">telah berjaya menyelesaikan program</div>
+              <div class="sijil-program">Kelas Al-Quran Maya</div>
+              <div class="sijil-program-sub">Modul Asas Tajwid Al-Qur'an</div>
+              <div class="sijil-details-row">
+                <div><div class="sijil-detail-label">Tarikh Selesai</div><div class="sijil-detail-val" id="sijil-tarikh">—</div></div>
+                <div><div class="sijil-detail-label">Keputusan</div><div class="sijil-detail-val" id="sijil-keputusan">—</div></div>
+                <div><div class="sijil-detail-label">No. Sijil</div><div class="sijil-detail-val" id="sijil-nombor">—</div></div>
+              </div>
+              <div class="sijil-footer">
+                <div class="sijil-tandatangan">
+                  <div class="sijil-tt-line"></div>
+                  <div class="sijil-tt-nama" id="sijil-pensyarah">—</div>
+                  <div class="sijil-tt-jawatan">Pensyarah / Ustaz/Ustazah</div>
+                </div>
+                <div class="sijil-tandatangan">
+                  <div class="sijil-tt-line"></div>
+                  <div class="sijil-tt-nama">Pengarah Klinik Islahul Quran</div>
+                  <div class="sijil-tt-jawatan">Politeknik Tuanku Sultanah Bahiyah</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sijil-belum-wrap" class="card" style="display:none">
+          <div style="text-align:center;padding:32px 0;color:var(--muted)">
+            <div style="font-size:3rem;margin-bottom:12px">🔒</div>
+            <div style="font-weight:700;font-size:1rem;margin-bottom:8px">Sijil Belum Tersedia</div>
+            <div style="font-size:0.82rem">Lengkapkan semua syarat terlebih dahulu untuk mendapatkan sijil anda.</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PORTAL ADMIN
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="portal-admin" class="portal" style="display:none">
+
+    <!-- Sidebar Admin -->
+    <aside class="sidebar" id="sidebar-admin">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-circle">🔧</div>
+        <div>
+          <div class="logo-title">Panel Admin</div>
+          <div class="logo-sub">Klinik Islahul Quran</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-portal="admin" data-section="a-overview">
+          <span class="nav-icon">📊</span> <span class="nav-label">Papan Pemuka</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="admin" data-section="a-pendaftaran">
+          <span class="nav-icon">📋</span> <span class="nav-label">Pendaftaran</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="admin" data-section="a-jadual">
+          <span class="nav-icon">🗓</span> <span class="nav-label">Jadual Pensyarah</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="admin" data-section="a-modul">
+          <span class="nav-icon">📚</span> <span class="nav-label">Urus Modul</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="admin" data-section="a-kemajuan">
+          <span class="nav-icon">📈</span> <span class="nav-label">Kemajuan Pelajar</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="admin" data-section="a-ujian">
+          <span class="nav-icon">✅</span> <span class="nav-label">Ujian &amp; Sijil</span>
+        </a>
+        <a href="#" class="nav-item" data-portal="admin" data-section="a-laporan">
+          <span class="nav-icon">📉</span> <span class="nav-label">Laporan</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user-info">
+          <div class="user-avatar admin-avatar" id="a-avatar">A</div>
+          <div>
+            <div class="user-name" id="a-user-name">Admin</div>
+            <div class="user-role">Pentadbir Sistem</div>
+          </div>
+        </div>
+        <button class="btn-logout" id="btn-logout-admin">Log Keluar</button>
+      </div>
+    </aside>
+
+    <!-- Butang hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-admin" aria-label="Buka Menu">☰</button>
+    <div class="sidebar-overlay" id="overlay-admin"></div>
+
+    <!-- Kandungan utama admin -->
+    <main class="main" id="main-admin">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div>
+          <h1 class="page-title" id="a-page-title">Papan Pemuka Admin</h1>
+          <p class="page-sub" id="a-page-sub">Selamat datang, Admin 👋</p>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-portal-badge admin-badge">Portal Admin</div>
+        </div>
+      </header>
+
+      <!-- SEKSYEN: OVERVIEW ADMIN -->
+      <section id="a-overview" class="section active">
+
+        <!-- 8 Kad statistik admin -->
+        <div class="stats-grid stats-grid-4">
+          <div class="stat-card emerald">
+            <div class="stat-icon">👥</div>
+            <div class="stat-info">
+              <div class="stat-val" id="a-stat-jumlah">5</div>
+              <div class="stat-label">Jumlah Pelajar</div>
+            </div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-info">
+              <div class="stat-val" id="a-stat-tunggu">2</div>
+              <div class="stat-label">Menunggu Pengesahan</div>
+            </div>
+          </div>
+          <div class="stat-card teal">
+            <div class="stat-icon">✅</div>
+            <div class="stat-info">
+              <div class="stat-val" id="a-stat-aktif">2</div>
+              <div class="stat-label">Pelajar Aktif</div>
+            </div>
+          </div>
+          <div class="stat-card gold">
+            <div class="stat-icon">📅</div>
+            <div class="stat-info">
+              <div class="stat-val">14</div>
+              <div class="stat-label">Kelas Dijalankan</div>
+            </div>
+          </div>
+          <div class="stat-card emerald-light">
+            <div class="stat-icon">📖</div>
+            <div class="stat-info">
+              <div class="stat-val">45%</div>
+              <div class="stat-label">% Selesai Modul</div>
+            </div>
+          </div>
+          <div class="stat-card teal-light">
+            <div class="stat-icon">📝</div>
+            <div class="stat-info">
+              <div class="stat-val">1</div>
+              <div class="stat-label">Menduduki Ujian</div>
+            </div>
+          </div>
+          <div class="stat-card gold-light">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-info">
+              <div class="stat-val">1</div>
+              <div class="stat-label">Lulus Ujian</div>
+            </div>
+          </div>
+          <div class="stat-card amber-light">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-info">
+              <div class="stat-val">0</div>
+              <div class="stat-label">Sijil Dikeluarkan</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jadual pendaftaran terkini -->
+        <div class="card">
+          <div class="card-header">
+            <h2>📋 Pendaftaran Terkini</h2>
+            <a href="#" class="link-small" data-portal="admin" data-section="a-pendaftaran">Lihat semua</a>
+          </div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Nama Pelajar</th>
+                  <th>Tahap</th>
+                  <th>Tarikh Daftar</th>
+                  <th>Status</th>
+                  <th>Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="a-recent-reg-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Aktiviti terkini -->
+        <div class="card">
+          <div class="card-header"><h2>🔔 Aktiviti Terkini</h2></div>
+          <ul class="activity-list" id="a-activity-list"></ul>
+        </div>
+
+      </section>
+
+      <!-- SEKSYEN: PENDAFTARAN ADMIN -->
+      <section id="a-pendaftaran" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h2>📋 Urus Pendaftaran Pelajar</h2>
+            <div style="display:flex;align-items:center;gap:8px">
+              <label style="font-size:0.78rem;color:var(--muted);font-weight:500">Tapis:</label>
+              <select id="a-pendaftaran-filter" class="filter-select" onchange="filterPendaftaran()">
+                <option value="Semua">Semua</option>
+                <option value="Menunggu Pengesahan">Menunggu</option>
+                <option value="Diluluskan">Diluluskan</option>
+                <option value="Ditolak">Ditolak</option>
+                <option value="Maklumat Tambahan">Perlu Maklumat</option>
+              </select>
+            </div>
+          </div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nama Pelajar</th>
+                  <th>E-mel</th>
+                  <th>Tahap Bacaan</th>
+                  <th>Tarikh Daftar</th>
+                  <th>Status</th>
+                  <th>Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="a-pendaftaran-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: JADUAL PENSYARAH -->
+      <section id="a-jadual" class="section">
+        <div class="card">
+          <div class="card-header"><h2>🗓 Jadual Pensyarah Bertugas</h2></div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Hari</th>
+                  <th>Slot Pagi (08:00–10:00)</th>
+                  <th>Slot Petang (14:00–16:00)</th>
+                  <th>Slot Malam (20:00–22:00)</th>
+                </tr>
+              </thead>
+              <tbody id="a-jadual-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Tempahan pelajar untuk disahkan -->
+        <div class="card">
+          <div class="card-header"><h2>📋 Senarai Tempahan Pelajar</h2></div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr><th>#</th><th>Pelajar</th><th>Hari</th><th>Slot</th><th>Kaedah</th><th>Tarikh Tempah</th><th>Status</th><th>Tindakan</th></tr>
+              </thead>
+              <tbody id="a-tempahan-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: URUS MODUL -->
+      <section id="a-modul" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h2>📚 Urus Modul Pembelajaran</h2>
+            <button class="btn-primary" onclick="showModal('modal-tambah-modul')" style="font-size:0.78rem;padding:6px 14px">+ Tambah Modul</button>
+          </div>
+          <div class="modul-admin-list" id="a-modul-list"></div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: KEMAJUAN PELAJAR -->
+      <section id="a-kemajuan" class="section">
+        <div class="card">
+          <div class="card-header"><h2>📈 Kemajuan Semua Pelajar</h2></div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Nama Pelajar</th>
+                  <th>Status</th>
+                  <th>Modul Selesai</th>
+                  <th>Latihan AI</th>
+                  <th>Kelas Hadir</th>
+                  <th>Status Ujian</th>
+                  <th>Kemajuan</th>
+                  <th>Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="a-kemajuan-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: UJIAN & SIJIL -->
+      <section id="a-ujian" class="section">
+        <div class="card">
+          <div class="card-header"><h2>⚙ Tetapan Ujian</h2></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+            <label style="font-size:0.85rem;font-weight:600;color:var(--muted)">Syarat Lulus Minimum (%):</label>
+            <input type="number" id="a-syarat-lulus" value="70" min="0" max="100" style="width:80px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:0.85rem;font-family:inherit" />
+            <button class="btn-secondary" onclick="simpanSyaratLulus()" style="font-size:0.78rem;padding:6px 14px">Simpan</button>
+            <span id="syarat-lulus-msg" style="font-size:0.78rem;color:var(--emerald);display:none">✓ Disimpan</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h2>⏳ Pelajar Menunggu Penilaian Guru</h2></div>
+          <div id="a-ujian-tunggu-list"></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h2>📝 Rekod Keputusan Penilaian</h2></div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Pilih Pelajar</label>
+              <select id="a-ujian-pelajar-sel">
+                <option value="">-- Pilih Pelajar --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Markah (%)</label>
+              <input type="number" id="a-ujian-markah" min="0" max="100" placeholder="Contoh: 82" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Ulasan Guru</label>
+            <textarea id="a-ujian-ulasan" rows="3" placeholder="Ulasan keputusan pelajar..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Status Keputusan</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="a-ujian-status" value="Lulus" /> ✅ Lulus</label>
+              <label class="radio-label"><input type="radio" name="a-ujian-status" value="Gagal" /> ❌ Gagal</label>
+            </div>
+          </div>
+          <div id="a-ujian-rekod-msg" style="display:none" class="form-success-msg"></div>
+          <button class="btn-primary" onclick="simpanKeputusanUjian()">💾 Sahkan &amp; Jana Sijil</button>
+        </div>
+      </section>
+
+      <!-- SEKSYEN: LAPORAN -->
+      <section id="a-laporan" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h2>📉 Laporan &amp; Analitik</h2>
+            <button class="btn-secondary" onclick="eksportLaporan()" style="font-size:0.78rem;padding:6px 14px">📤 Eksport Laporan</button>
+          </div>
+          <div class="stats-grid stats-grid-4" id="a-laporan-stats"></div>
+          <div class="two-col" style="margin-top:24px">
+            <div class="card" style="margin:0">
+              <div class="card-header"><h2>Status Pelajar</h2></div>
+              <div class="bar-chart" id="chart-status"></div>
+            </div>
+            <div class="card" style="margin:0">
+              <div class="card-header"><h2>Kemajuan Modul</h2></div>
+              <div class="bar-chart" id="chart-modul"></div>
+            </div>
+          </div>
+        </div>
+        <div id="a-laporan-eksport-msg" style="display:none;margin-top:8px" class="form-success-msg"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal: Tambah Modul -->
+  <div class="modal-overlay" id="modal-tambah-modul" style="display:none" onclick="closeModalOutside(event,'modal-tambah-modul')">
+    <div class="modal-box">
+      <div class="modal-header"><h3>+ Tambah Modul Baharu</h3><button class="modal-close" onclick="closeModal('modal-tambah-modul')">✕</button></div>
+      <div class="form-group"><label>Tajuk Modul</label><input type="text" id="modal-modul-tajuk" placeholder="Contoh: Modul 11 — Tilawah" /></div>
+      <div class="form-group"><label>Huraian Ringkas</label><textarea id="modal-modul-hurai" rows="2" placeholder="Penerangan ringkas modul..."></textarea></div>
+      <div class="form-group">
+        <label>Jenis</label>
+        <div class="radio-group">
+          <label class="radio-label"><input type="radio" name="modal-modul-jenis" value="Wajib" checked /> 📌 Wajib</label>
+          <label class="radio-label"><input type="radio" name="modal-modul-jenis" value="Pilihan" /> 🔵 Pilihan</label>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="btn-primary" onclick="tambahModulBaharu()">Simpan Modul</button>
+        <button class="btn-ghost" onclick="closeModal('modal-tambah-modul')">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Modul -->
+  <div class="modal-overlay" id="modal-edit-modul" style="display:none" onclick="closeModalOutside(event,'modal-edit-modul')">
+    <div class="modal-box">
+      <div class="modal-header"><h3>✏ Sunting Modul</h3><button class="modal-close" onclick="closeModal('modal-edit-modul')">✕</button></div>
+      <div class="form-group"><label>Tajuk Modul</label><input type="text" id="modal-edit-tajuk" /></div>
+      <div class="form-group"><label>Huraian</label><textarea id="modal-edit-hurai" rows="2"></textarea></div>
+      <div class="form-group">
+        <label>Jenis</label>
+        <div class="radio-group">
+          <label class="radio-label"><input type="radio" name="modal-edit-jenis" value="Wajib" /> 📌 Wajib</label>
+          <label class="radio-label"><input type="radio" name="modal-edit-jenis" value="Pilihan" /> 🔵 Pilihan</label>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="btn-primary" onclick="simpanEditModul()">Simpan</button>
+        <button class="btn-ghost" onclick="closeModal('modal-edit-modul')">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Butiran Pelajar (kemajuan) -->
+  <div class="modal-overlay" id="modal-butiran-pelajar" style="display:none" onclick="closeModalOutside(event,'modal-butiran-pelajar')">
+    <div class="modal-box modal-box-lg">
+      <div class="modal-header"><h3>📋 Butiran Pelajar</h3><button class="modal-close" onclick="closeModal('modal-butiran-pelajar')">✕</button></div>
+      <div id="modal-butiran-content"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Sertai Kelas (simulasi) -->
+  <div class="modal-overlay" id="modal-sertai-kelas" style="display:none" onclick="closeModalOutside(event,'modal-sertai-kelas')">
+    <div class="modal-box">
+      <div class="modal-header"><h3>🖥 Sertai Kelas Dalam Talian</h3><button class="modal-close" onclick="closeModal('modal-sertai-kelas')">✕</button></div>
+      <div style="text-align:center;padding:20px 0">
+        <div style="font-size:3rem;margin-bottom:12px">📹</div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:8px" id="modal-kelas-info">Kelas sedang dimulakan...</div>
+        <div style="font-size:0.82rem;color:var(--muted);margin-bottom:16px">Ini adalah simulasi. Dalam sistem sebenar, anda akan disambungkan ke platform video.</div>
+        <div class="ai-notice" style="text-align:left">⚠ [SIMULASI] Sambungan video bersama pensyarah adalah simulasi sahaja.</div>
+      </div>
+      <button class="btn-ghost btn-full" onclick="closeModal('modal-sertai-kelas')">Tutup</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
